@@ -1,5 +1,5 @@
 # R.A.D. Routes CLI Installers
-this is a group of installer scripts for the rad routes cli
+This is a group of installer scripts for the R.A.D. Route Runner cli program.
 
 # Mac OS cURL install
 Open your terminal and run the command below;
