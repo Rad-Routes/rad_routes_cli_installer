@@ -6,6 +6,8 @@ curl https://github.com/shyaboi/rad-route-runner/archive/refs/heads/master.zip -
 
 unzip rad-route-runner-master
 
+cd rad-route-runner-master
+
 chmod +x rr.py
 
 mv rr.py rr
