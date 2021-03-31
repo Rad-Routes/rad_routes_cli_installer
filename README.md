@@ -1,4 +1,4 @@
-# rad_routes_cli_installer
+# R.A.D. Routes CLI Installers
 this is a group of installer scripts for the rad routes cli
 
 # Mac OS cURL install
