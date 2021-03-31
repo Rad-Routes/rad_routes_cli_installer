@@ -9,7 +9,7 @@ echo $vers
 
 echo 'Installing pipenv'
 
-python3 -m pip install pipenv
+pip3 install pipenv
 
 # else
 
