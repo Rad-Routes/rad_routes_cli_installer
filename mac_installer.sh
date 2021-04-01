@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "For ease, and speed R.A.D. Routes will install 2 packages to your Python"
 
 echo "If you plan to use env mode, then say No."
