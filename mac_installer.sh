@@ -5,6 +5,11 @@ echo "For ease, and speed R.A.D. Routes will install 2 packages to your Python"
 echo "If you plan to use env mode, then say No."
 
 echo "Do you wish to install this program?"
+
+read benis
+
+echo $benis
+
 select yn in "Yes" "No"; do
     case $yn in
         Yes ) echo "R.A.D. Routes will now install Python modules"
