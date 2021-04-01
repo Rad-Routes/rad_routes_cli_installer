@@ -1,48 +1,63 @@
-vers=`pipenv --version`
+echo "For ease, and speed R.A.D. Routes will install 2 packages to your Python"
+echo "If you plan to use env mode, then say No."
 
-echo $vers
-# echo $vers | awk '{print substr($0,length,1)}'
+read -p "Continue (y/n)?" choice
+case "$choice" in 
+  y|Y ) echo "R.A.D. Routes will now install Python modules"
 
-# if [ "$vers" == "d" ]; then
+    echo "requests & pymongo"
 
-# echo 'no pippppppppppppp env '
+    pip3 install requests
 
-echo 'Installing pipenv'
+    pip3 install pymongo
 
-pip3 install pipenv
+    echo 'done installing requests & pymongo'
 
-# else
+    echo '...creating R.A.D. Routes directory'
 
-echo $vers
+    mkdir -p ~/.rad_routes
 
-# fi
+    cd ~/.rad_routes
 
-echo 'done installing pipenv...creating rad routess folder'
+    echo 'curling the master files'
 
-mkdir -p ~/.rad_routes
+    curl https://github.com/shyaboi/rad-route-runner/archive/refs/heads/master.zip -O -J -L
 
-cd ~/.rad_routes
+    echo 'unzipppping'
 
-echo 'curling the master files'
+    unzip rad-route-runner-master
 
-curl https://github.com/shyaboi/rad-route-runner/archive/refs/heads/master.zip -O -J -L
+    cd rad-route-runner-master
 
-echo 'unzipppping'
+    echo 'copying files into your usr/local/bin directory'
 
-unzip rad-route-runner-master
+    chmod +x rr.py
 
-cd rad-route-runner-master
+    mv rr.py rr
 
-echo 'copying files into your usr/local/bin directory'
+    echo 'File linking R.A.D. Routes installation files'
 
-chmod +x rr.py
+    sudo ln -s ~/.rad_routes/rad-route-runner-master/rr /usr/local/bin
 
-mv rr.py rr
+    echo 'R.A.D. Routes ready to use!, open a new terminal, and type rr -r YOUR_FAVORITE_ROUTE'
 
-echo 'File linking R.A.D. Routes installation files'
+    exit 0;;
 
-sudo ln -s ~/.rad_routes/rad-route-runner-master/rr /usr/local/bin
+  n|N ) echo 'nooooooooooooo'
+  
+    vers=`pipenv --version`
 
-echo 'R.A.D. Routes ready to use!, open a new terminal, and type rr -r YOUR_FAVORITE_ROUTE'
+    echo $vers
+    # echo $vers | awk '{print substr($0,length,1)}'
 
-exit 0
+    # if [ "$vers" == "d" ]; then
+
+    echo 'Your current pipenv is ' $vers
+
+    echo 'Please use your own Python env'
+    echo 'in your virtual environment run;'
+    echo 'pip install requests'
+    echo 'pip install pymongo';;
+
+  * ) echo "invalid";;
+esac
