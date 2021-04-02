@@ -8,13 +8,11 @@ echo "https://radroutes.com/Downloads"
 
 echo "R.A.D. Routes will now install Python modules"
 
-echo "requests & pymongo"
+echo "requests"
 
 pip3 install requests
 
-pip3 install pymongo
-
-echo 'done installing requests & pymongo'
+echo 'done installing requests'
 
 echo '...creating R.A.D. Routes directory'
 

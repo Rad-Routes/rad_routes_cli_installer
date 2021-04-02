@@ -18,8 +18,6 @@ select yn in "Yes" "No"; do
 
           pip3 install requests
 
-          pip3 install pymongo
-
           echo 'done installing requests & pymongo'
 
           echo '...creating R.A.D. Routes directory'
@@ -67,7 +65,6 @@ select yn in "Yes" "No"; do
           echo 'Please use your own Python env'
           echo 'in your virtual environment run;'
           echo 'pip install requests'
-          echo 'pip install pymongo'
           exit;;
 
         * ) echo "invalid";;
