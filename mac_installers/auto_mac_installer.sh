@@ -6,14 +6,6 @@ echo "If you plan to use env mode, then download the manual version from;"
 
 echo "https://radroutes.com/Downloads"
 
-echo "R.A.D. Routes will now install Python modules"
-
-echo "requests"
-
-pip3 install requests
-
-echo 'done installing requests'
-
 echo '...creating R.A.D. Routes directory'
 
 mkdir -p ~/.rad_routes
@@ -38,7 +30,7 @@ mv rr.py rr
 
 echo 'File linking R.A.D. Routes installation files'
 
-ln -s ~/.rad_routes/rad-route-runner-master/rr /usr/local/bin
+sudo ln -s ~/.rad_routes/rad-route-runner-master/rr /usr/local/bin
 
 echo 'R.A.D. Routes ready to use!, open a new terminal, and type rr -r YOUR_FAVORITE_ROUTE'
 
