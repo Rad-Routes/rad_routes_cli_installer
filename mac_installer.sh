@@ -1,62 +1,45 @@
-echo "For ease, and speed R.A.D. Routes will install 2 packages to your Python"
-echo "If you plan to use env mode, then say No."
+echo "R.A.D. Routes will now install..."
 
-read -p "Continue (y/n)?" choice
-case "$choice" in 
-  y|Y ) echo "R.A.D. Routes will now install Python modules"
+echo '...creating R.A.D. Routes directory'
 
-    echo "requests & pymongo"
+mkdir -p ~/.rad_routes
 
-    pip3 install requests
+cd ~/.rad_routes
 
-    pip3 install pymongo
+echo 'curling the master files'
 
-    echo 'done installing requests & pymongo'
+curl https://github.com/shyaboi/rad-route-runner/archive/refs/heads/master.zip -O -J -L
 
-    echo '...creating R.A.D. Routes directory'
+echo 'unzipppping'
 
-    mkdir -p ~/.rad_routes
+unzip rad-route-runner-master
 
-    cd ~/.rad_routes
+cd rad-route-runner-master
 
-    echo 'curling the master files'
+echo 'copying files into your usr/local/bin directory'
 
-    curl https://github.com/shyaboi/rad-route-runner/archive/refs/heads/master.zip -O -J -L
+chmod +x rr.py
 
-    echo 'unzipppping'
+mv rr.py rr
 
-    unzip rad-route-runner-master
+echo 'File linking R.A.D. Routes installation files'
 
-    cd rad-route-runner-master
+sudo ln -s ~/.rad_routes/rad-route-runner-master/rr /usr/local/bin
 
-    echo 'copying files into your usr/local/bin directory'
+echo 'R.A.D. Routes ready to use!, open a new terminal, and type rr -r YOUR_FAVORITE_ROUTE'
 
-    chmod +x rr.py
+#env version checking
+# vers=`pipenv --version`
 
-    mv rr.py rr
+# echo $vers
+# # echo $vers | awk '{print substr($0,length,1)}'
 
-    echo 'File linking R.A.D. Routes installation files'
+# # if [ "$vers" == "d" ]; then
 
-    sudo ln -s ~/.rad_routes/rad-route-runner-master/rr /usr/local/bin
+# echo 'Your current pipenv is ' $vers
 
-    echo 'R.A.D. Routes ready to use!, open a new terminal, and type rr -r YOUR_FAVORITE_ROUTE'
+# echo 'Please use your own Python env'
+# echo 'in your virtual environment run;'
+# echo 'pip install requests'
 
-    exit 0;;
-
-  n|N ) echo 'nooooooooooooo'
-  
-    vers=`pipenv --version`
-
-    echo $vers
-    # echo $vers | awk '{print substr($0,length,1)}'
-
-    # if [ "$vers" == "d" ]; then
-
-    echo 'Your current pipenv is ' $vers
-
-    echo 'Please use your own Python env'
-    echo 'in your virtual environment run;'
-    echo 'pip install requests';;
-
-  * ) echo "invalid";;
-esac
+exit
