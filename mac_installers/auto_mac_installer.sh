@@ -30,7 +30,7 @@ mv rr.py rr
 
 echo 'File linking R.A.D. Routes installation files'
 
-sudo ln -s ~/.rad_routes/rad-route-runner-master/rr /usr/local/bin
+ln -s ~/.rad_routes/rad-route-runner-master/rr /usr/local/bin
 
 echo 'R.A.D. Routes ready to use!, open a new terminal, and type rr -r YOUR_FAVORITE_ROUTE'
 

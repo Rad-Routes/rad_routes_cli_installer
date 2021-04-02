@@ -6,16 +6,6 @@ echo "If you plan to use env mode, then download the manual version from;"
 
 echo "https://radroutes.com/Downloads"
 
-echo "R.A.D. Routes will now install Python modules"
-
-echo "requests & pymongo"
-
-pip3 install requests
-
-pip3 install pymongo
-
-echo 'done installing requests & pymongo'
-
 echo '...creating R.A.D. Routes directory'
 
 mkdir -p ~/.rad_routes
