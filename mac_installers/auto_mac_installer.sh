@@ -14,7 +14,7 @@ cd ~/.rad_routes
 
 echo 'curling the master files'
 
-curl https://github.com/shyaboi/rad-route-runner/archive/refs/heads/master.zip -O ~/. -J -L
+sudo curl "https://github.com/shyaboi/rad-route-runner/archive/refs/heads/master.zip" -O ~/. -J -L
 
 echo 'unzipppping'
 
