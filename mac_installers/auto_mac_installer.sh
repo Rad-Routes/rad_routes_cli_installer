@@ -24,13 +24,13 @@ cd rad-route-runner-master
 
 echo 'copying files into your usr/local/bin directory'
 
-chmod +x rr.py
+sudo chmod +x rr.py
 
-mv rr.py rr
+sudo mv rr.py rr
 
 echo 'File linking R.A.D. Routes installation files'
 
-ln -s ~/.rad_routes/rad-route-runner-master/rr /usr/local/bin
+sudo ln -s ~/.rad_routes/rad-route-runner-master/rr /usr/local/bin
 
 echo 'R.A.D. Routes ready to use!, open a new terminal, and type rr -r YOUR_FAVORITE_ROUTE'
 
