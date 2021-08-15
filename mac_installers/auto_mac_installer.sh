@@ -14,11 +14,11 @@ cd ~/.rad_routes
 
 echo 'curling the master files'
 
-curl https://github.com/shyaboi/rad-route-runner/archive/refs/heads/master.zip -O -J -L
+curl https://github.com/shyaboi/rad-route-runner/archive/refs/heads/master.zip -O ~/. -J -L
 
 echo 'unzipppping'
 
-unzip rad-route-runner-master
+sudo unzip rad-route-runner-master
 
 cd rad-route-runner-master
 
